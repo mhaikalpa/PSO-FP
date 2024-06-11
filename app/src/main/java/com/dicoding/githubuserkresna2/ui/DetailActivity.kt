@@ -50,7 +50,7 @@ class DetailActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_share -> {
                 username?.let { // Gunakan username yang sudah diinisialisasi
-                    val sendIntent: Intent = Intent( 17616 ).apply {
+                    val sendIntent: Intent = Intent().apply {
                         action = Intent.ACTION_SEND
                         putExtra(Intent.EXTRA_TEXT, "https://github.com/$it")
                         type = "text/plain"

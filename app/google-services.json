@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "47096943762",
+    "project_id": "github-user-finder-3a91c",
+    "storage_bucket": "github-user-finder-3a91c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47096943762:android:a8c17a2337ce62b695824b",
+        "android_client_info": {
+          "package_name": "com.dicoding.githubuserkresna2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7bF7zf-NnqLPfl6-4qiB4wSJQiZh8sHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

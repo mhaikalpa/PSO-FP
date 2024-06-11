@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("kotlin-parcelize")
     id ("kotlin-kapt")
+    id("com.google.firebase.appdistribution")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -23,6 +25,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            firebaseAppDistribution {
+                groups = "quality-assurance"
+            }
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -42,6 +49,7 @@ android {
         viewBinding = true
         buildConfig = true
     }
+
 }
 
 dependencies {
