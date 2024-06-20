@@ -96,4 +96,4 @@ jobs:
         with:
           artifacts: "${{ steps.find_apk.outputs.apk_path }}"
           tag: ${{ steps.increment_tag.outputs.new_tag }}
-          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}"
+          token: ${{ secrets.SECRET_TOKEN }}"
