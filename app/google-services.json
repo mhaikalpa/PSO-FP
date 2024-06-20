@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "793927480256",
+    "project_id": "mycamera-translator",
+    "storage_bucket": "mycamera-translator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793927480256:android:663a3a4571dc2c96d04e25",
+        "android_client_info": {
+          "package_name": "com.dicoding.picodiploma.mycamera"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAm_bSJiOSLTvHp0tmIHOWmROJC_Ju-DY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
