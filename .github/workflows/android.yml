@@ -40,11 +40,11 @@ jobs:
 
     - name: Build with Gradle
       env:
-        API_GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}
+        token: ${{ secrets.SECRET_TOKEN }}
       run: ./gradlew build
       
     - name: Upload a build artifact
       uses: actions/upload-artifact@v3
       with:
-        name: githubuserfinder.apk
+        name: MyCamera.apk
         path: app/build/outputs/apk/debug/app-debug.apk
