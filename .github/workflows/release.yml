@@ -7,11 +7,11 @@ on:
       - '*'
 
 jobs:
-  Gradle:
+  Release:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code
-        uses: actions/checkout@v4
+      - name: checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -37,4 +37,4 @@ jobs:
           APP_FILE: app/build.gradle.kts
           APP_FOLDER: ./app/release/app.apk
           RELEASE_TITLE: New Build
-          NAME_VARIABLE: app-release.apk
+          NAME_VARIABLE: MyCamera.apk
