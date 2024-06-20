@@ -5,6 +5,8 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.8.10" apply false
     id("com.google.firebase.appdistribution") version "5.0.0" apply false
     id("com.google.gms.google-services") version "4.4.2" apply false
+    id("com.google.firebase.firebase-perf") version "1.4.2" apply false
+    id("com.google.firebase.crashlytics") version "3.0.1" apply false
 }
 
 buildscript {
@@ -16,7 +18,5 @@ buildscript {
     dependencies {
         classpath("com.google.gms:google-services:4.4.2")
         classpath("com.google.firebase:firebase-appdistribution-gradle:5.0.0")
-        classpath("com.google.firebase:perf-plugin:1.4.2")
-        classpath("com.google.firebase:firebase-crashlytics-gradle:3.0.1")
     }
 }
