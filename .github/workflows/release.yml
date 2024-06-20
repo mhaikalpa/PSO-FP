@@ -6,13 +6,12 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SECRET_TOKEN }}
 
       - name: Set Up JDK 17
         uses: actions/setup-java@v3
@@ -59,41 +58,9 @@ jobs:
           echo "New tag: $new_tag"
           echo "::set-output name=new_tag::$new_tag"
 
-      - name: Delete existing tag and release if they exist
-        env:
-          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
-        run: |
-          new_tag=${{ steps.increment_tag.outputs.new_tag }}
-          if git rev-parse "refs/tags/$new_tag" >/dev/null 2>&1; then
-            git tag -d "$new_tag"
-            git push --delete origin "$new_tag"
-          fi
-          
-          release_id=$(curl -s \
-            -H "Authorization: token $GITHUB_TOKEN" \
-            https://api.github.com/repos/${{ github.repository }}/releases/tags/$new_tag \
-            | jq -r '.id')
-          
-          if [ "$release_id" != "null" ]; then
-            curl -s \
-              -X DELETE \
-              -H "Authorization: token $GITHUB_TOKEN" \
-              https://api.github.com/repos/${{ github.repository }}/releases/$release_id
-          fi
-
-      - name: Create new tag
-        env:
-          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          new_tag=${{ steps.increment_tag.outputs.new_tag }}
-          git tag "$new_tag"
-          git push origin "$new_tag"
-
       - name: Push to Releases
         uses: ncipollo/release-action@v1
         with:
           artifacts: "${{ steps.find_apk.outputs.apk_path }}"
           tag: ${{ steps.increment_tag.outputs.new_tag }}
-          token: ${{ secrets.SECRET_TOKEN }}"
+          token: ${{ secrets.SECRET_TOKEN }}
