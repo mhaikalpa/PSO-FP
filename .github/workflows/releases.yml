@@ -27,11 +27,19 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
+        env:
+          token: ${{ secrets.SECRET_TOKEN }}
         run: ./gradlew assembleRelease
+
+      - name: Upload a build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: MyCamera.apk
+          path: app/build/outputs/apk/release/MyCamera.apk
 
       - name: push to releases
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "app/build/outputs/apk/release/*"
+          artifacts: "app/build/outputs/apk/release/MyCamera.apk"
           tag: v0.0.1
           token: ${{ secrets.SECRET_TOKEN }}
