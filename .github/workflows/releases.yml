@@ -38,7 +38,7 @@ jobs:
       - name: Releasing using Hub
         uses: kyze8439690/action-release-releaseapk@master
         env:
-          TOKEN: ${{ secrets.SECRET_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
           APP_FOLDER: app
         with:
           working-directory: /home/runner/work/PudakLumpurMedan/PudakLumpurMedan
