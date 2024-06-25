@@ -3,6 +3,8 @@ name: Deploy App to Firebase
 on:
   push:
     branches: [ "testing" ]
+  pull_request:
+    branches: [ "testing" ]
 
 jobs:
   Deploy:
