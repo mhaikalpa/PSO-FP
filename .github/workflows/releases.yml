@@ -40,3 +40,5 @@ jobs:
         env:
           TOKEN: ${{ secrets.SECRET_TOKEN }}
           APP_FOLDER: app
+        with:
+          working-directory: /home/runner/work/PudakLumpurMedan/PudakLumpurMedan
