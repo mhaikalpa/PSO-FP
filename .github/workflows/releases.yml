@@ -1,0 +1,53 @@
+name: Release new apk to github
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+    tags:
+      - '*'
+
+jobs:
+  release:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.7
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'zulu'
+          cache: gradle
+
+      - name: Cache Gradle packages
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Run tests
+        run: ./gradlew test
+
+      - name: Build with Gradle
+        env:
+          token: ${{ secrets.SECRET_TOKEN }}
+        run: ./gradlew build
+
+      - name: push to releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "app/build/outputs/apk/debug/app-debug.apk"
+          tag: v0.0.1
+          token: ${{ secrets.SECRET_TOKEN }}
