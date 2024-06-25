@@ -35,6 +35,13 @@ jobs:
       - name: Releasing using Hub
         uses: VladDaniliuk/action-release-releaseapk@master
         env:
+          JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.11-9/x64
+          JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.11-9/x64
+          GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+          GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+          DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+          DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+          GITHUB_DEPENDENCY_GRAPH_ENABLED: false
           GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
           VERSION_VARIABLE: versionName
           APP_FILE: app/build.gradle.kts
