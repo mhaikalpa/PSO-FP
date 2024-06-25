@@ -37,8 +37,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
           VERSION_VARIABLE: versionName
-          APP_FILE: buildSrc/Android.kt
-          APP_FOLDER: ./app/release/app.apk
-          CHANGELOG_FILE: ./CHANGELOG.md
+          APP_FILE: app/build.gradle.kts
+          APP_FOLDER: app/build/outputs/apk/debug/app-debug.apk
+          CHANGELOG_FILE: .github/workflows/CHANGELOG.md
           RELEASE_TITLE: New Version
           NAME_VARIABLE: MyCamera Translator.apk
