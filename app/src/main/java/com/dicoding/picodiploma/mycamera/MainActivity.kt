@@ -45,10 +45,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Menyebabkan aplikasi crash dengan mengakses objek null
-        val crash = null
-        crash!!.toString()
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

@@ -1,5 +1,5 @@
-# Github User Finder Project
-Project ini merupakan sebuah project aplikasi berbasis android yang dapat mencari pengguna di github berdasarkan username pengguna github tersebut. Project ini menggunakan praktik devops di keseluruahan proses pengembangan. Aplikasi ini menggunakan kotlin sebagai dasar dari aplikasi ini. 
+# My Camera Translator
+Dokumentasi Project ini merupakan sebuah dokumentasi project aplikasi berbasis android yang dapat mentranslate sebuah kata dan kalimat melalui tangkapan dari kamera smartphone. Project ini menggunakan praktik devops di keseluruhan proses pengembangan. Aplikasi ini menggunakan kotlin sebagai dasar dari aplikasi ini.
 
 Berikut adalah pengembang dari project ini
 * Muhammad Haikal / 5026211101
