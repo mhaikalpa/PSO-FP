@@ -5,6 +5,15 @@ plugins {
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
     id("com.google.firebase.firebase-perf")
+    id("org.sonarqube") version "4.4.1.3373"
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "mhaikalpa_PudakLumpurMedan")
+        property("sonar.organization", "mhaikalpa")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
 
 android {
