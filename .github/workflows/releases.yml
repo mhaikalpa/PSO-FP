@@ -29,10 +29,9 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew assembleRelease
 
-
-
-      - name: Build Android release APK with EXPO
-        uses: goblin-ihx/action-release-releaseapk@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
-          APP_FOLDER: app
+      - name: push to releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "app/build/outputs/apk/release/*"
+          tag: v0.0.1
+          token: ${{ secrets.SECRET_TOKEN }}
