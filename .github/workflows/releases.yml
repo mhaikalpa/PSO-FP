@@ -45,15 +45,9 @@ jobs:
           token: ${{ secrets.SECRET_TOKEN }}
         run: ./gradlew build
 
-      - name: Upload a build artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: MyCamera.apk
-          path: app/build/outputs/apk/release/MyCamera.apk
-
       - name: push to releases
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "app/build/outputs/apk/release/MyCamera.apk"
+          artifacts: "app/build/outputs/apk/debug/app-debug.apk"
           tag: v0.0.1
           token: ${{ secrets.SECRET_TOKEN }}
