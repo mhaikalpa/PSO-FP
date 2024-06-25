@@ -35,10 +35,11 @@ jobs:
       - name: Print current directory again
         run: pwd
 
+      - name: List files in the current directory
+        run: ls -la
+
       - name: Releasing using Hub
         uses: kyze8439690/action-release-releaseapk@master
         env:
           GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
           APP_FOLDER: app
-        with:
-          working-directory: /home/runner/work/PudakLumpurMedan/PudakLumpurMedan
