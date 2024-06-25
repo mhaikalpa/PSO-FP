@@ -29,8 +29,10 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew assembleRelease
 
-      - name: Publish APK
-        uses: alsrb968/action-release-apk@master
+
+
+      - name: Build Android release APK with EXPO
+        uses: goblin-ihx/action-release-releaseapk@v2
         env:
           GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
           APP_FOLDER: app
