@@ -38,6 +38,9 @@ jobs:
       - name: List files in the current directory
         run: ls -la
 
+      - name: Verify git status
+        run: git status
+
       - name: Releasing using Hub
         uses: kyze8439690/action-release-releaseapk@master
         env:
