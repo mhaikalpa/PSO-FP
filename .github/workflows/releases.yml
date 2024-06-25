@@ -41,6 +41,9 @@ jobs:
       - name: Verify git status
         run: git status
 
+      - name: Reset any changes
+        run: git reset --hard
+
       - name: Releasing using Hub
         uses: kyze8439690/action-release-releaseapk@master
         env:
