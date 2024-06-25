@@ -30,26 +30,10 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew assembleRelease
 
-      - name: Print current directory again
-        run: pwd
-
-      - name: List files in the current directory
-        run: ls -la
-
-      - name: Verify git status
-        run: git status
-
-      - name: Add and commit changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Commit changes made during build process"
-
-      - name: Releasing using Hub
-        uses: kyze8439690/action-release-releaseapk@master
+      - name: Publish APK
+        uses: alsrb968/action-release-apk@master
         env:
           GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
           APP_FOLDER: app
