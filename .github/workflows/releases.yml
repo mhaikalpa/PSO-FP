@@ -41,9 +41,6 @@ jobs:
       - name: Verify git status
         run: git status
 
-      - name: Reset any changes
-        run: git reset --hard
-
       - name: Add and commit changes
         run: |
           git config --global user.name "github-actions[bot]"
