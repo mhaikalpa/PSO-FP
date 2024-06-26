@@ -6,6 +6,8 @@ Berikut adalah pengembang dari project ini
 * Kresna Dwipayana Ramadhani / 5026211114
 * Auzan Taqi Syafega / 5026211179
 
+Dokumentasi lengkap juga dapat diakses melalui <a>[link berikut](https://drive.google.com/file/d/1M4IR7aoyDb1HbZpXIkGdV8ZOXN7vWZ3S/view?usp=sharing)<a>.
+
 ## Set Up Project
 1. Install Git melalui gitlab
 
