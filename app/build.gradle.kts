@@ -55,6 +55,7 @@ android {
 }
 
 dependencies {
+    implementation("androidx.activity:activity:1.9.0")
     val cameraxVersion = "1.3.0"
 
     implementation("androidx.core:core-ktx:1.12.0")
